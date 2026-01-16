@@ -1,0 +1,747 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Comic Sans MS', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #4facfe 75%, #00f2fe 100%);
+    background-size: 400% 400%;
+    animation: gradientShift 15s ease infinite;
+    min-height: 100vh;
+    padding: 20px;
+    color: #333;
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 30px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    padding: 20px;
+}
+
+/* Header */
+header {
+    text-align: center;
+    padding: 20px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    margin: -20px -20px 20px -20px;
+}
+
+header h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.subtitle {
+    font-size: 1.2em;
+    opacity: 0.9;
+}
+
+/* Navigation Tabs */
+.tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.tab-btn {
+    flex: 1;
+    min-width: 120px;
+    padding: 15px 20px;
+    font-size: 1.2em;
+    font-weight: bold;
+    border: none;
+    border-radius: 15px;
+    background: #e0e0e0;
+    color: #666;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: inherit;
+}
+
+.tab-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.tab-btn.active {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+/* Mode Sections */
+.mode {
+    display: none;
+    animation: fadeIn 0.5s ease;
+}
+
+.mode.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Buttons */
+.btn {
+    padding: 15px 25px;
+    font-size: 1.1em;
+    font-weight: bold;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: inherit;
+    margin: 5px;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.btn-primary:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+}
+
+.btn-secondary {
+    background: #f0f0f0;
+    color: #666;
+}
+
+.btn-secondary:hover {
+    background: #e0e0e0;
+    transform: scale(1.05);
+}
+
+.btn-secondary.active {
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    color: white;
+}
+
+.btn-danger {
+    background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%);
+    color: white;
+}
+
+.btn-danger:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 20px rgba(255, 107, 107, 0.4);
+}
+
+.btn-large {
+    padding: 25px 40px;
+    font-size: 1.5em;
+}
+
+/* Read Mode */
+.read-container {
+    text-align: center;
+    padding: 20px;
+}
+
+.urdu-display {
+    background: linear-gradient(135deg, #ffeaa7 0%, #fdcb6e 100%);
+    border-radius: 20px;
+    padding: 40px;
+    margin: 20px 0;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.urdu-text {
+    font-size: 8em;
+    font-family: 'Noto Nastaliq Urdu', 'Al Qalam Taj Nastaleeq', 'Jameel Noori Nastaleeq', serif;
+    color: #2d3436;
+    margin-bottom: 20px;
+    line-height: 1;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.urdu-text:hover {
+    transform: scale(1.1);
+}
+
+.pronunciation {
+    font-size: 2em;
+    color: #636e72;
+    font-weight: bold;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.mode-selector {
+    margin-top: 20px;
+}
+
+.mode-selector label {
+    font-size: 1.2em;
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+/* Alphabet Grid Mode */
+.alphabet-container {
+    padding: 20px;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 2em;
+    color: #2d3436;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.section-subtitle {
+    font-size: 1.2em;
+    color: #636e72;
+    margin-bottom: 30px;
+}
+
+.alphabet-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    gap: 15px;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.alphabet-btn {
+    font-size: 3em;
+    font-family: 'Noto Nastaliq Urdu', 'Al Qalam Taj Nastaleeq', 'Jameel Noori Nastaleeq', serif;
+    padding: 20px;
+    border: 4px solid #667eea;
+    border-radius: 20px;
+    background: linear-gradient(135deg, #ffeaa7 0%, #fdcb6e 100%);
+    color: #2d3436;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    min-height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.alphabet-btn:hover {
+    transform: scale(1.1);
+    background: linear-gradient(135deg, #fdcb6e 0%, #e17055 100%);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+    border-color: #764ba2;
+}
+
+.alphabet-btn.highlighted {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-color: #764ba2;
+    transform: scale(1.15);
+    box-shadow: 0 10px 30px rgba(102, 126, 234, 0.6);
+    animation: pulse 0.5s ease;
+}
+
+/* Sentences Mode */
+.sentences-container {
+    padding: 20px;
+    text-align: center;
+}
+
+.sentence-display {
+    background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+    border-radius: 20px;
+    padding: 40px;
+    margin: 20px 0;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.sentence-urdu {
+    font-size: 4em;
+    font-family: 'Noto Nastaliq Urdu', 'Al Qalam Taj Nastaleeq', 'Jameel Noori Nastaleeq', serif;
+    color: #2d3436;
+    margin-bottom: 20px;
+    line-height: 1.5;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.sentence-urdu:hover {
+    transform: scale(1.05);
+}
+
+.sentence-meaning {
+    font-size: 1.8em;
+    color: #636e72;
+    font-weight: bold;
+    font-style: italic;
+}
+
+/* Syllables Mode */
+.syllables-container {
+    padding: 20px;
+    text-align: center;
+}
+
+.syllable-display {
+    background: linear-gradient(135deg, #ffeaa7 0%, #fdcb6e 100%);
+    border-radius: 20px;
+    padding: 40px;
+    margin: 20px 0;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    min-height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.syllable-parts {
+    font-size: 3.5em;
+    font-family: 'Noto Nastaliq Urdu', 'Al Qalam Taj Nastaleeq', 'Jameel Noori Nastaleeq', serif;
+    color: #667eea;
+    margin-bottom: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    line-height: 1.8;
+}
+
+.syllable-parts:hover {
+    transform: scale(1.1);
+}
+
+.syllable-word {
+    font-size: 5em;
+    font-family: 'Noto Nastaliq Urdu', 'Al Qalam Taj Nastaleeq', 'Jameel Noori Nastaleeq', serif;
+    color: #2d3436;
+    margin: 20px 0;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.syllable-meaning {
+    font-size: 2em;
+    color: #636e72;
+    font-weight: bold;
+    font-style: italic;
+}
+
+/* Write Mode */
+.write-container {
+    text-align: center;
+    padding: 20px;
+}
+
+.write-instruction {
+    margin-bottom: 20px;
+}
+
+.write-instruction h2 {
+    font-size: 1.8em;
+    color: #2d3436;
+    margin-bottom: 15px;
+}
+
+.target-letter {
+    font-size: 6em;
+    font-family: 'Noto Nastaliq Urdu', 'Al Qalam Taj Nastaleeq', 'Jameel Noori Nastaleeq', serif;
+    color: #667eea;
+    margin: 20px 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#drawing-canvas {
+    border: 5px solid #667eea;
+    border-radius: 15px;
+    background: white;
+    cursor: crosshair;
+    max-width: 100%;
+    height: auto;
+    touch-action: none;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.canvas-controls {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+/* Speak Mode */
+.speak-container {
+    text-align: center;
+    padding: 20px;
+}
+
+.speak-instruction {
+    margin-bottom: 30px;
+}
+
+.speak-instruction h2 {
+    font-size: 1.8em;
+    color: #2d3436;
+    margin-bottom: 20px;
+}
+
+.word-to-speak {
+    font-size: 6em;
+    font-family: 'Noto Nastaliq Urdu', 'Al Qalam Taj Nastaleeq', 'Jameel Noori Nastaleeq', serif;
+    color: #667eea;
+    margin: 20px 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.word-pronunciation {
+    font-size: 1.8em;
+    color: #636e72;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.microphone-container {
+    margin: 40px 0;
+}
+
+.mic-icon {
+    font-size: 2em;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.mic-text {
+    display: block;
+}
+
+.feedback {
+    min-height: 80px;
+    margin: 20px 0;
+    padding: 20px;
+    font-size: 1.3em;
+    font-weight: bold;
+    text-align: center;
+    line-height: 1.6;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.feedback strong {
+    display: block;
+    margin-top: 10px;
+    font-size: 1.1em;
+}
+
+.feedback.success {
+    color: #00b894;
+    animation: bounce 0.5s ease;
+}
+
+.feedback.error {
+    color: #d63031;
+    animation: shake 0.5s ease;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-10px); }
+    75% { transform: translateX(10px); }
+}
+
+.speak-controls {
+    margin-top: 20px;
+}
+
+/* Game Mode */
+.game-container {
+    padding: 20px;
+}
+
+.game-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.score-display {
+    font-size: 1.5em;
+    font-weight: bold;
+    background: linear-gradient(135deg, #ffeaa7 0%, #fdcb6e 100%);
+    padding: 15px 25px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.question-number {
+    font-size: 1.3em;
+    font-weight: bold;
+    color: #636e72;
+}
+
+.question-area {
+    text-align: center;
+    margin-bottom: 30px;
+    background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.question-image {
+    font-size: 6em;
+    font-family: 'Noto Nastaliq Urdu', 'Al Qalam Taj Nastaleeq', 'Jameel Noori Nastaleeq', serif;
+    color: #2d3436;
+    margin: 20px 0;
+}
+
+.question-text {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #2d3436;
+    margin-top: 15px;
+}
+
+.options-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.option-btn {
+    padding: 20px;
+    font-size: 1.5em;
+    font-family: 'Noto Nastaliq Urdu', 'Al Qalam Taj Nastaleeq', 'Jameel Noori Nastaleeq', serif;
+    background: white;
+    border: 4px solid #667eea;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
+    color: #2d3436;
+}
+
+.option-btn:hover {
+    transform: scale(1.05);
+    background: #f0f0f0;
+    box-shadow: 0 5px 20px rgba(102, 126, 234, 0.3);
+}
+
+.option-btn.correct {
+    background: #00b894;
+    color: white;
+    border-color: #00b894;
+    animation: pulse 0.5s ease;
+}
+
+.option-btn.wrong {
+    background: #d63031;
+    color: white;
+    border-color: #d63031;
+    animation: shake 0.5s ease;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+.game-feedback {
+    text-align: center;
+    min-height: 60px;
+    font-size: 2em;
+    font-weight: bold;
+    margin: 20px 0;
+}
+
+.game-feedback.success {
+    color: #00b894;
+    animation: bounce 0.5s ease;
+}
+
+.game-feedback.error {
+    color: #d63031;
+    animation: shake 0.5s ease;
+}
+
+.game-controls {
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.8em;
+    }
+
+    .urdu-text {
+        font-size: 5em;
+    }
+
+    .word-to-speak,
+    .target-letter,
+    .question-image {
+        font-size: 4em;
+    }
+
+    #drawing-canvas {
+        width: 100%;
+        max-width: 400px;
+    }
+
+    .tabs {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .tab-btn {
+        min-width: auto;
+        flex: 1 1 auto;
+        font-size: 0.9em;
+        padding: 10px 8px;
+    }
+
+    .options-container {
+        grid-template-columns: 1fr;
+    }
+
+    .btn {
+        font-size: 1em;
+        padding: 12px 20px;
+    }
+
+    .btn-large {
+        padding: 20px 30px;
+        font-size: 1.2em;
+    }
+
+    /* Alphabet Grid Mobile */
+    .alphabet-grid {
+        grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+        gap: 10px;
+        padding: 10px;
+    }
+
+    .alphabet-btn {
+        font-size: 2em;
+        padding: 15px;
+        min-height: 80px;
+    }
+
+    /* Sentences Mobile */
+    .sentence-urdu {
+        font-size: 2.5em;
+    }
+
+    .sentence-meaning {
+        font-size: 1.3em;
+    }
+
+    /* Syllables Mobile */
+    .syllable-parts {
+        font-size: 2.5em;
+    }
+
+    .syllable-word {
+        font-size: 3.5em;
+    }
+
+    .syllable-meaning {
+        font-size: 1.5em;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 10px;
+        border-radius: 20px;
+    }
+
+    header {
+        margin: -10px -10px 20px -10px;
+        padding: 15px;
+    }
+
+    header h1 {
+        font-size: 1.5em;
+    }
+
+    .urdu-text {
+        font-size: 4em;
+    }
+
+    .pronunciation {
+        font-size: 1.5em;
+    }
+
+    .tab-btn {
+        font-size: 0.8em;
+        padding: 8px 5px;
+    }
+
+    .alphabet-grid {
+        grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+        gap: 8px;
+    }
+
+    .alphabet-btn {
+        font-size: 1.8em;
+        padding: 12px;
+        min-height: 70px;
+    }
+
+    .sentence-urdu {
+        font-size: 2em;
+    }
+
+    .syllable-parts {
+        font-size: 2em;
+    }
+
+    .syllable-word {
+        font-size: 3em;
+    }
+}
+
