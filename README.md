@@ -1,4 +1,4 @@
-```markdown
+
 # AI-Assisted Project Development Report
 
 ## 📌 GitHub Repository
@@ -195,7 +195,7 @@ Some features planned for future versions include:
 ## 👨‍💻 Developed By
 
 This project was developed as part of an AI-assisted software development assignment using **Claude AI** and **GitHub Copilot**.
-```
+
 
 
 
